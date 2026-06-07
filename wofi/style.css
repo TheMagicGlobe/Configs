@@ -1,0 +1,52 @@
+window {
+    margin: 0px;
+    border: 2px solid #cba6f7; /* Mauve accent border */
+    background-color: #1e1e2e; /* Base background */
+    border-radius: 12px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+#input {
+    margin: 10px;
+    border: none;
+    color: #cdd6f4; /* Text color */
+    background-color: #313244; /* Surface color for the search box */
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: #1e1e2e;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: #1e1e2e;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #cdd6f4;
+}
+
+/* The highlight when you select an app */
+#entry:selected {
+    background-color: #cba6f7; /* Mauve highlight */
+    border-radius: 8px;
+    outline: none;
+}
+
+#text:selected {
+    color: #11111b; /* Deep dark text on the Mauve background for contrast */
+    font-weight: bold;
+}

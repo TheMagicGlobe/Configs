@@ -1,0 +1,241 @@
+/* ====================================================================
+ * Catppuccin Mocha - Mauve Accent for SwayNC
+ * ==================================================================== */
+
+@define-color base      #1e1e2e;
+@define-color mantle    #181825;
+@define-color crust     #11111b;
+
+@define-color text      #cdd6f4;
+@define-color subtext0  #a6adc8;
+@define-color subtext1  #bac2de;
+
+@define-color surface0  #313244;
+@define-color surface1  #45475a;
+@define-color surface2  #585b70;
+
+@define-color overlay0  #6c7086;
+@define-color overlay1  #7f849c;
+@define-color overlay2  #9399b2;
+
+@define-color mauve     #cba6f7;
+@define-color red       #f38ba8;
+@define-color green     #a6e3a1;
+
+/* ==================================================================== */
+
+* {
+  font-family: "JetBrains Mono", "Ubuntu Nerd Font", sans-serif;
+  background-clip: padding-box;
+}
+
+/* Control Center */
+.control-center {
+  background: @base;
+  color: @text;
+  border: 2px solid @mauve;
+  border-radius: 12px;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+  color: @text;
+}
+
+/* Floating Notifications */
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+/* Notification Rows & Cards */
+.notification-row {
+  outline: none;
+  margin: 8px;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: @surface0;
+  border-radius: 12px;
+}
+
+.notification {
+  background: @mantle;
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 0;
+  border: 1px solid @surface1;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Typography inside notifications */
+.summary {
+  font-size: 15px;
+  font-weight: bold;
+  background: transparent;
+  color: @mauve;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 13px;
+  font-weight: bold;
+  background: transparent;
+  color: @subtext0;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 14px;
+  font-weight: normal;
+  background: transparent;
+  color: @text;
+  text-shadow: none;
+}
+
+/* Close Button */
+.close-button {
+  background: @surface1;
+  color: @text;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin-top: 10px;
+  margin-right: 16px;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: @red;
+  color: @crust;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+/* Action Buttons */
+.notification-default-action,
+.notification-action {
+  padding: 6px;
+  margin: 0;
+  box-shadow: none;
+  background: @mantle;
+  border: 1px solid @surface1;
+  color: @text;
+  transition: all 0.15s ease-in-out;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: @surface0;
+}
+
+.notification-default-action {
+  border-radius: 12px;
+}
+
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+}
+
+.notification-action:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 12px;
+  border-right: 1px solid @surface1;
+}
+
+/* Widgets */
+.widget-title {
+  margin: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: @mauve;
+}
+
+.widget-title > button {
+  font-size: 14px;
+  color: @text;
+  text-shadow: none;
+  background: @surface0;
+  border: 1px solid @surface1;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.widget-title > button:hover {
+  background: @surface1;
+}
+
+.widget-dnd {
+  margin: 8px;
+  font-size: 1.1rem;
+  color: @text;
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 12px;
+  background: @surface0;
+  border: 1px solid @surface1;
+  box-shadow: none;
+}
+
+.widget-dnd > switch:checked {
+  background: @mauve;
+}
+
+.widget-dnd > switch slider {
+  background: @text;
+  border-radius: 12px;
+}
+
+/* MPRIS Widget */
+.widget-mpris {
+  background: @mantle;
+  border-radius: 12px;
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid @surface1;
+}
+
+.widget-mpris-player {
+  padding: 8px;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  color: @text;
+}
+
+.widget-mpris-subtitle {
+  font-size: 13px;
+  color: @subtext1;
+}

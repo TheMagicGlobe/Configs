@@ -1,0 +1,191 @@
+/* Catppuccin Mocha Palette */
+@define-color base   #1e1e2e;
+@define-color mantle #181825;
+@define-color crust  #11111b;
+
+@define-color text     #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color mauve     #cba6f7;
+@define-color blue      #89b4fa;
+@define-color red       #f38ba8;
+@define-color peach     #fab387;
+@define-color yellow    #f9e2af;
+@define-color green     #a6e3a1;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @text;
+}
+
+/* --- The Three Main Islands --- */
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: alpha(@base, 0.85);
+    border-radius: 100px; 
+    padding: 4px 6px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Workspaces --- */
+#workspaces {
+    background-color: transparent;
+}
+
+#workspaces button {
+    padding: 4px 0;
+    min-width: 28px; 
+    margin: 0 4px;
+    color: @surface2;
+    background-color: transparent;
+    border-radius: 8px; /* Rounded square */
+    transition: all 0.2s ease;
+}
+
+#workspaces button.focused {
+    color: @base;
+    background-color: @mauve;
+}
+
+#workspaces button:hover {
+    color: @text;
+    background-color: @surface1;
+}
+
+#workspaces button.urgent {
+    color: @base;
+    background-color: @red;
+}
+
+/* --- Active Window --- */
+#window {
+    color: @subtext1;
+    background-color: transparent;
+    padding: 0 8px;
+    margin-left: 8px;
+}
+
+/* --- Unified Module Bubbles --- */
+#mpris,
+#clock,
+#custom-weather,
+#network,
+#pulseaudio,
+#battery {
+    background-color: @surface0;
+    padding: 2px 12px;
+    margin: 0 4px;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+/* Grouping the physical media buttons to look like a control pad */
+#custom-prev,
+#custom-play,
+#custom-next {
+    background-color: @surface0;
+    padding: 2px 8px;
+    margin: 0 2px;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+/* --- Specific Module Colors & Hover Animations --- */
+
+#mpris,
+#custom-prev,
+#custom-play,
+#custom-next {
+    color: @mauve;
+}
+
+#mpris:hover,
+#custom-prev:hover,
+#custom-play:hover,
+#custom-next:hover {
+    background-color: @mauve;
+    color: @base;
+}
+
+#clock {
+    color: @text;
+}
+#clock:hover {
+    background-color: @surface1;
+}
+
+#custom-weather {
+    color: @blue;
+}
+#custom-weather:hover {
+    background-color: @blue;
+    color: @base;
+}
+
+#network {
+    color: @blue;
+}
+#network:hover {
+    background-color: @blue;
+    color: @base;
+}
+
+#pulseaudio {
+    color: @peach;
+}
+#pulseaudio.muted {
+    color: @surface2;
+    background-color: @surface0;
+}
+#pulseaudio:hover {
+    background-color: @peach;
+    color: @base;
+}
+
+#battery {
+    color: @green;
+}
+#battery.warning {
+    color: @base;
+    background-color: @yellow;
+}
+#battery.critical {
+    color: @base;
+    background-color: @red;
+    animation: pulse 1s infinite alternate;
+}
+
+/* --- Tray --- */
+#tray {
+    padding: 0 8px;
+    margin: 0 4px;
+    background-color: transparent;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: @red;
+        color: @base;
+    }
+    100% {
+        background-color: @surface0;
+        color: @red;
+    }
+}

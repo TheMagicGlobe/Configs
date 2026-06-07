@@ -1,0 +1,62 @@
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14pt;
+    color: #cdd6f4; /* Catppuccin Text */
+    background-color: rgba(30, 30, 46, 0.9); /* Catppuccin Base with 90% opacity */
+}
+
+button {
+    border-radius: 20px;
+    border-color: black;
+    text-decoration-color: #cdd6f4;
+    color: #cdd6f4;
+    background-color: #313244; /* Catppuccin Surface0 */
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    margin: 10px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+button:focus, button:active, button:hover {
+    background-color: #45475a; /* Catppuccin Surface1 */
+    border-color: #cba6f7; /* Catppuccin Mauve Accent */
+    outline-style: none;
+}
+
+/* 
+ * Icon mapping. 
+ * Note: These point to the default wlogout icons. 
+ * If you download the official Catppuccin SVG icons, change the paths to your local directory (e.g., ~/.config/wlogout/icons/...) 
+ */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}

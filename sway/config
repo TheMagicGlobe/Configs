@@ -1,0 +1,21 @@
+# ==============================================================================
+# Core Sway Configuration
+# ==============================================================================
+
+# Core Variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $terminal kitty
+set $menu wofi --show drun
+
+# Include System Defaults
+include /etc/sway/config.d/*
+
+# Include Modular Configurations
+include ~/.config/sway/conf.d/*.conf
+
+# Initialize DBus Environment
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

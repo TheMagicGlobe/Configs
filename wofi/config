@@ -1,0 +1,15 @@
+show=drun
+prompt=Search...
+filter_rate=15
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+width=25%
+height=35%
+hide_scroll=true
+unfocused_close=true
+show_all=false
+allow_images=true
+image_size=24

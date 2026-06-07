@@ -1,0 +1,138 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 40,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 0,
+    "spacing": 5,
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/weather"
+    ],
+    "modules-right": [
+        "mpris",
+        "custom/prev",
+        "custom/play",
+        "custom/next",
+        "tray",
+        "network",
+        "pulseaudio",
+        "battery"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "sway/window": {
+        "format": "{title}",
+        "icon": true,
+        "icon-size": 18,
+        "max-length": 40
+    },
+
+    "clock": {
+        "format": "  {:%H:%M}",
+        "format-alt": "  {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#cdd6f4'><b>{}</b></span>",
+                "days": "<span color='#a6adc8'>{}</span>",
+                "weeks": "<span color='#cba6f7'><b>W{}</b></span>",
+                "weekdays": "<span color='#cba6f7'><b>{}</b></span>",
+                "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+   "custom/weather": {
+        "format": "{}",
+        "exec": "curl -s --max-time 2 'https://wttr.in/?format=1'",
+        "interval": 3600,
+        "tooltip": false
+    },
+
+    "mpris": {
+        "format": "{player_icon}  {title}",
+        "format-paused": "{status_icon}  <i>{title}</i>",
+        "player-icons": {
+            "default": "",
+            "spotify": "",
+            "firefox": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "max-length": 30,
+        "tooltip-format": "{player} ({status})"
+    },
+
+    "custom/prev": {
+        "format": "",
+        "on-click": "playerctl previous",
+        "tooltip": false
+    },
+
+    "custom/play": {
+        "format": "⏯",
+        "on-click": "playerctl play-pause",
+        "tooltip": false
+    },
+
+    "custom/next": {
+        "format": "",
+        "on-click": "playerctl next",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "network": {
+        "format-wifi": "  {ifname}",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "⚠  Offline",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "  Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    }
+}
